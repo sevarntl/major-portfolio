@@ -54,7 +54,6 @@ body {
     font-size: 25px;
     text-align: center;
     color: #313638;
-    padding: 75px;
   }
 
 a {
@@ -96,14 +95,13 @@ a:hover::before, a:hover::after {
     position: relative;
     margin: 0 auto; 
     text-align: center; 
-    padding-top: 75px;
   }
   
   .project {
     display: inline-flex; 
     align-items: center;
     margin: 20px;
-    padding: 125px;
+    padding: 50px;
   }
   
   .image-container {
@@ -123,7 +121,6 @@ a:hover::before, a:hover::after {
   
   .aboutme {
     text-align: center;
-    padding: 100px;
     font-size: 30px;
   }
 
@@ -144,7 +141,6 @@ a:hover::before, a:hover::after {
   .video-container {
     top: 50%;
     left: 50%;
-
     text-align: center;
   }
 
@@ -160,4 +156,3 @@ a:hover::before, a:hover::after {
     text-align: center;
     padding: 20px 0;
   }
-  
