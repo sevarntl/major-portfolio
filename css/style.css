@@ -1,0 +1,163 @@
+body {
+  font-family: "mozaic-geo-variable", sans-serif;
+  font-variation-settings: "wght" 400;
+    margin: 1px;
+    padding: 1px;
+    border: 1px; 
+    background-color: #FFFCF9;
+  }
+  
+  header {
+    padding: 50px 0;
+    text-align: center;
+    font-size: 50px;
+  }
+  
+  hr.rounded {
+    border: 2px solid #FF9DA8;
+    border-radius: 5px;
+    max-width: 750px;
+    margin-top: -75px;
+  }
+
+  .line {
+    width: 100vw;
+  }
+  .left, .right {
+    width: 50vw;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .left {
+    color:#313638;
+    transform: skew(0deg, -15deg);
+  }
+  .right {
+    color: #FF9DA8;
+    transform: skew(0deg, 15deg);
+  }
+  .left .content {
+    width: 100vw;
+    text-align: center;
+  }
+  .right .content {
+    width: 100vw;
+    text-align: center;
+    transform: translate(-50vw);
+  }
+  span {
+    display: inline-block;
+    transition: ease-out .6s;
+  }
+
+  .hero {
+    font-size: 25px;
+    text-align: center;
+    color: #313638;
+    padding: 75px;
+  }
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: #FF9DA8;
+}
+a::before, a::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  transition: .3s;
+}
+a::before {
+  bottom: 0;
+  left: 50%;
+  border-top: 2px solid #F6EB84;
+  border-radius: 0px 10px 10px 0px;
+
+}
+a::after {
+  right: 50%;
+  bottom: 0;
+  border-bottom: 2px solid #F6EB84;
+  border-radius: 10px 0px 0px 10px;
+}
+a:hover::before, a:hover::after {
+  width: 50%;
+}
+
+  .container {
+    color: #313638;
+    position: relative;
+    margin: 20px auto;
+    align-items: center;
+  }
+
+  .wrapper {
+    position: relative;
+    margin: 0 auto; 
+    text-align: center; 
+    padding-top: 75px;
+  }
+  
+  .project {
+    display: inline-flex; 
+    align-items: center;
+    margin: 20px;
+    padding: 125px;
+  }
+  
+  .image-container {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    max-width: 60%; 
+    height: auto;
+  }
+  
+  .description {
+    flex: 1;
+    padding: 20px;
+    font-size: 20px;
+    color: #313638;
+    text-align: center;
+  }
+  
+  .aboutme {
+    text-align: center;
+    padding: 100px;
+    font-size: 30px;
+  }
+
+  .image {
+    width: 100%; 
+    max-width: 100%;
+    border-radius: 25px;
+  }
+  
+  .project:nth-child(even) .image-container {
+    order: 2; 
+  }
+  
+  .project:nth-child(even) .description {
+    order: 1; 
+  }
+  
+  .video-container {
+    top: 50%;
+    left: 50%;
+
+    text-align: center;
+  }
+
+  .video-container video {
+    max-width: 75%;
+  }
+
+  footer {
+    margin-top: 100px ;
+    border-radius: 20px 20px 0px 00px;
+    background-color: #FF9DA8;
+    color: #313638;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
