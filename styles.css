@@ -11,6 +11,7 @@ body {
     color: #000;
     background-size: cover;
     background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 
 nav {
@@ -90,7 +91,7 @@ nav ul li a:hover {
 /* Grid container */
 .work-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     width: 100%;
     max-width: 1200px;
@@ -166,4 +167,18 @@ button {
 
 button:hover {
     background-color: #722040;
+}
+@media (max-width: 600px) {
+  .section {
+    padding: 100px 1rem;
+  }
+
+  .work-grid {
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .work-card h3 {
+    font-size: 1.2rem;
+  }
 }
