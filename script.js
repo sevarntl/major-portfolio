@@ -1,4 +1,3 @@
-// Animate sections as they enter view
 ScrollReveal().reveal('.section h2, .section p, .section form, .work-card', {
     delay: 200,
     duration: 1000,
@@ -80,3 +79,4 @@ document.querySelectorAll("nav ul li a").forEach(link => {
     });
   });
 });
+
