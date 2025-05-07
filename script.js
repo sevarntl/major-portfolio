@@ -1,4 +1,3 @@
-// Animate sections as they enter view
 ScrollReveal().reveal('.section h2, .section p, .section form, .work-card', {
     delay: 200,
     duration: 1000,
@@ -17,6 +16,7 @@ VanillaTilt.init(document.querySelectorAll(".work-card"), {
     glare: true,
     "max-glare": 0.2
 });
+
 ScrollReveal().reveal('.work-card', {
     delay: 100,
     interval: 200,
@@ -40,3 +40,28 @@ ScrollReveal().reveal('.work-card', {
     ease: "power2.out"
   });
  
+  let hue = 0;
+setInterval(() => {
+    hue += 0.2;
+    document.querySelector('.gradient-bg').style.filter = `hue-rotate(${hue}deg)`;
+}, 30);
+
+const text = document.getElementById('proximity-text');
+
+document.addEventListener('mousemove', (e) => {
+  const rect = text.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+
+  const dx = e.clientX - centerX;
+  const dy = e.clientY - centerY;
+  const distance = Math.sqrt(dx * dx + dy * dy);
+
+  const maxDistance = 300; // pixels
+  let weight = 900 - (distance / maxDistance) * 800;
+
+  // Clamp between 100 and 900
+  weight = Math.max(100, Math.min(900, weight));
+
+  text.style.fontVariationSettings = `'wght' ${weight.toFixed(0)}`;
+});
