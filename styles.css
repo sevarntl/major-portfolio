@@ -70,27 +70,45 @@ nav {
     z-index: 1000;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 1em;
+nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.25);
+  padding: 0.75em 0.25em;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 1000;
+  max-width: max-content;
 }
-
-nav ul li {
-    margin: 0 20px;
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
 }
 
 nav ul li a {
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  color: #000;
+  font-variation-settings: "wght" 560;
+  padding: 0.5em 1em;
+  border-radius: 999px;
+  transition: background 0.3s ease, font-variation-settings 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #af4261;
+  background: rgba(240, 163, 199, 0.4); /* same pink as your gradient */
+  color: #000;
+  font-variation-settings: "wght" 700;
 }
+
 
 .section {
     min-height: 100vh;
@@ -115,12 +133,6 @@ nav ul li a:hover {
   .work {
     position: relative;
     z-index: 10;
-  }
-
-  .proximity-text {
-    font-size: 4rem;
-    font-variation-settings: 'wght' 100;
-    transition: font-variation-settings 0.05s ease;
   }
 
 /*#about {
@@ -216,4 +228,18 @@ button {
 
 button:hover {
     background-color: #722040;
+}
+
+nav ul li a {
+  font-family: "deuterium-variable", sans-serif;
+  font-variation-settings: "wght" 300;
+  transition: font-variation-settings 0.2s ease;
+  text-decoration: none;
+  font-weight: normal;
+  color: #000;
+}
+
+nav ul li a:hover {
+  font-variation-settings: "wght" 500;
+  color: #af4261;
 }
