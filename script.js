@@ -1,3 +1,4 @@
+// Animate sections as they enter view
 ScrollReveal().reveal('.section h2, .section p, .section form, .work-card', {
     delay: 200,
     duration: 1000,
@@ -46,22 +47,36 @@ setInterval(() => {
     document.querySelector('.gradient-bg').style.filter = `hue-rotate(${hue}deg)`;
 }, 30);
 
-const text = document.getElementById('proximity-text');
+function wrapNavLetters() {
+  const navLinks = document.querySelectorAll("nav ul li a");
+  navLinks.forEach(link => {
+    const text = link.textContent;
+    link.innerHTML = ""; // Clear
+    text.split("").forEach(char => {
+      const span = document.createElement("span");
+      span.textContent = char;
+      span.style.display = "inline-block";
+      link.appendChild(span);
+    });
+  });
+}
 
-document.addEventListener('mousemove', (e) => {
-  const rect = text.getBoundingClientRect();
-  const centerX = rect.left + rect.width / 2;
-  const centerY = rect.top + rect.height / 2;
+document.addEventListener("DOMContentLoaded", wrapNavLetters);
+document.querySelectorAll("nav ul li a").forEach(link => {
+  link.addEventListener("mousemove", (e) => {
+    link.querySelectorAll("span").forEach(span => {
+      const rect = span.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const dist = Math.abs(e.clientX - centerX);
+      const maxDist = 100;
+      const weight = 400 + Math.max(0, 800 - (dist / maxDist) * 800);
+      span.style.fontVariationSettings = `"wght" ${weight.toFixed(0)}`;
+    });
+  });
 
-  const dx = e.clientX - centerX;
-  const dy = e.clientY - centerY;
-  const distance = Math.sqrt(dx * dx + dy * dy);
-
-  const maxDistance = 300; // pixels
-  let weight = 900 - (distance / maxDistance) * 800;
-
-  // Clamp between 100 and 900
-  weight = Math.max(100, Math.min(900, weight));
-
-  text.style.fontVariationSettings = `'wght' ${weight.toFixed(0)}`;
+  link.addEventListener("mouseleave", () => {
+    link.querySelectorAll("span").forEach(span => {
+      span.style.fontVariationSettings = `"wght" 560`;
+    });
+  });
 });
