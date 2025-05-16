@@ -135,14 +135,6 @@ nav ul li a:hover {
     z-index: 10;
   }
 
-/*#about {
-}
-
-#work 
-
-#contact */
-
-
 .work {
     max-width: 1200px;
     margin: 0 auto;
@@ -151,24 +143,25 @@ nav ul li a:hover {
 
 /* Grid container */
 .work-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .work-card {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 1rem;
-    box-shadow: 8px 8px 0 #a39e9e;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    transition: transform 0.3s ease;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem 3rem; /* ⬅️ 3rem vertical, 1.5rem horizontal */
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.work-card {
+  aspect-ratio: 1 / 1; /* square cards */
+  max-width: 320px;     /* reduce size */
+  width: 100%;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+  box-shadow: 8px 8px 0 #a39e9e;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
   
   .work-card:hover {
     transform: scale(1.02);
