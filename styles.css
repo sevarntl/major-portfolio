@@ -284,3 +284,31 @@ nav ul li a:hover {
 .greeting-wrapper:hover .hello {
   transform: translateY(0%);
 }
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+  min-height: 50vh;
+}
+
+.contact-message {
+  /* remove opacity and transform temporarily */
+  font-size: 1.5rem;
+  text-align: center;
+  color: black;
+}
+
+.contact-link {
+  display: inline-block;
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #ff6aa6, #ffa07a);
+  padding: 0.4em 0.8em;
+  border-radius: 999px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
